@@ -40,7 +40,7 @@ const estilo = StyleSheet.create(
     titulo:{
       color: "#FFFFFF",
       fontWeight: "bold",
-      fontSize: 70
+      fontSize: 60
     },
     texto:{
       color: "#FFFFFF",
