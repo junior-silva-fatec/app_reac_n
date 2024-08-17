@@ -1,4 +1,5 @@
-import { Text, View, StyleSheet } from "react-native";
+import { useState } from "react";
+import { Text, View, StyleSheet, Button } from "react-native";
 const produtos = [  
   {id: 1, nome: "Coca-Cola", preco: 5.5},
   {id: 2, nome: "Pepsi", preco: 5.5},
@@ -6,18 +7,25 @@ const produtos = [
   {id: 4, nome: "Guaraná", preco: 5.5}
 ]
 
-export default function Index() {
+export default function Index() {  
+  const [contador, setContador] = useState(0);
   return (
     <View style={estilo.container}
     >
      {produtos.map((produto) => (
-      <View key={produto.id} style={estilo.lista}>
-        <Text>{produto.nome}</Text>
-        <Text>{produto.preco}</Text>
+       <View key={produto.id}>
+        <Text style={estilo.titulo}>{produto.nome}</Text>
+        <Text style={estilo.texto}>{produto.preco}</Text>
       </View>
       ))}
+      <Button title={contador.toString()} onPress={() => clicarBotao()}></Button>
     </View>
   );
+
+  function clicarBotao() {
+    setContador(contador+1)  
+  }
+
 }
 
 const estilo = StyleSheet.create(
@@ -25,15 +33,17 @@ const estilo = StyleSheet.create(
     container: {
       flex: 1,
       justifyContent: "center",
-      alignItems: "center",
+      alignItems: "flex-start",
       backgroundColor: "#bababa",
+      paddingStart: 20
     },
-    text:{
-      color: "#FFFFFF"
+    titulo:{
+      color: "#FFFFFF",
+      fontWeight: "bold",
+      fontSize: 70
     },
-    lista:{
-      display: "flex",
-      flexDirection: "row",      
-    }
+    texto:{
+      color: "#FFFFFF",
+    },
   }
 )
