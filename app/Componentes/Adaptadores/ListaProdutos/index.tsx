@@ -1,10 +1,11 @@
 import { ScrollView, View } from "react-native";
 import ItemProduto from "../ItemProduto";
+import Style from "@/app/Styles/Default";
 
 function ListaProdutos({produtos}: 
     {produtos: {id:number, nome:string, preco: number}[]}){
     return (
-        <ScrollView><View>
+        <ScrollView ><View >
         {produtos.map((p)=> 
             <ItemProduto produto={p} key={p.id}>
 

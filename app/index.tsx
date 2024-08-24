@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Text, View, StyleSheet, Button } from "react-native";
 import ListaProdutos from "./Componentes/Adaptadores/ListaProdutos";
+import Style from "./Styles/Default";
 const produtos = [  
   {id: 1, nome: "Coca-Cola", preco: 5.5},
   {id: 2, nome: "Pepsi", preco: 5.5},
@@ -11,7 +12,7 @@ const produtos = [
 export default function Index() {  
   const [contador, setContador] = useState(0);
   return (
-    <View style={estilo.container}
+    <View style={Style.container}
     >
     <ListaProdutos produtos={produtos}></ListaProdutos>
       <Button title={contador.toString()} onPress={() => clicarBotao()}></Button>
