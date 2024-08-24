@@ -21,6 +21,7 @@ const Style = StyleSheet.create(
             justifyContent: 'center',
             alignItems: 'center',
             padding: 20,
+            marginVertical: 5
         },
         cardText: {
             fontSize: 18,
