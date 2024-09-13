@@ -6,9 +6,6 @@ import { useEffect } from "react";
 import CadastroProduto from "./Componentes/Adaptadores/CadastroProduto";
 
 
-
-
-
 export default function Index() {
   let [contador,setContador]= useState(0);
   let [produtos,setProdutos]= useState([]);
@@ -33,9 +30,7 @@ export default function Index() {
      <ListaProdutos produtos={produtos}></ListaProdutos>
      <Button title={contador.toString()}
       onPress={()=>{clicarBotao()}} >
-     </Button>
-
-     <CadastroProduto/>
+     </Button>  
 
       
     </View>
@@ -46,8 +41,6 @@ export default function Index() {
   
   }
 }
-
-
 
 const estilo= StyleSheet.create({
   container: {
